@@ -1,8 +1,7 @@
 "use client"
 import { client } from "@/app/client";
-import { ConnectButton, darkTheme, lightTheme, useActiveAccount } from "thirdweb/react";
+import { ConnectButton, darkTheme, useActiveAccount } from "thirdweb/react";
 import { base } from "thirdweb/chains";
-import { inAppWallet } from "thirdweb/wallets";
 import { tokenContractAddress } from "@/constants/contracts";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -11,7 +10,7 @@ import { Loader2, Search } from "lucide-react";
 
 export function NavBar() {
     const account = useActiveAccount();
-    const [isClaiming, setIsClaiming] = useState(false);
+    const [isClaiming] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     return (
         <div className="mb-4 sm:mb-6">

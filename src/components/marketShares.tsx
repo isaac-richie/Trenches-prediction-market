@@ -1,6 +1,6 @@
 import { Badge } from "./ui/badge";
 import { toEther } from "thirdweb";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { toFixed } from "@/lib/utils";
 
 interface MarketSharesDisplayProps {
@@ -25,7 +25,7 @@ export function MarketSharesDisplay({
         B: BigInt(0) 
     });
 
-    const calculateWinnings = (option: 'A' | 'B') => {
+    const calculateWinnings = useCallback((option: 'A' | 'B') => {
         if (!sharesBalance || !market) return BigInt(0);
 
         const userShares = option === 'A' ? sharesBalance.optionAShares : sharesBalance.optionBShares;
@@ -42,7 +42,7 @@ export function MarketSharesDisplay({
         
         // Total winnings is their original shares plus their proportion of losing shares
         return userShares + winningsFromLosingShares;
-    };
+    }, [sharesBalance, market]);
 
     useEffect(() => {
         if (!sharesBalance || !market) return;
@@ -56,7 +56,7 @@ export function MarketSharesDisplay({
         if (newWinnings.A !== winnings.A || newWinnings.B !== winnings.B) {
             setWinnings(newWinnings);
         }
-    }, [sharesBalance, market.totalOptionAShares, market.totalOptionBShares]);
+    }, [sharesBalance, market, calculateWinnings]);
 
     const displayWinningsA = toFixed(Number(toEther(winnings.A)), 2);
     const displayWinningsB = toFixed(Number(toEther(winnings.B)), 2);

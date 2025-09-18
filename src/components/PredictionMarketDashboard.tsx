@@ -4,8 +4,6 @@ import { useReadContract } from 'thirdweb/react'
 import { predictionMarketContract } from '@/constants/contracts'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import  MarketCard  from './marketCard'
-import Image from 'next/image'
-import bannerImage from '@/app/Gamble.png'
 
 import { MarketCardSkeleton } from './skeletonCard';
 //import { Footer } from "./footer"
