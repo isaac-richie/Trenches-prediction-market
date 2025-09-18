@@ -1,24 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trenches Prediction Market
+
+A decentralized prediction market platform built on Base network using Next.js and Thirdweb.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+1. Get your Thirdweb Client ID from [https://thirdweb.com/dashboard](https://thirdweb.com/dashboard)
+2. Create a `.env.local` file in the root directory
+
+### Environment Setup
+
+Create a `.env.local` file with the following variables:
+
+```bash
+NEXT_PUBLIC_THIRDWEB_CLIENT_ID=your_client_id_here
+```
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+For Vercel deployment, make sure to add the environment variable in your Vercel project settings:
+- Go to your Vercel project dashboard
+- Navigate to Settings > Environment Variables
+- Add `NEXT_PUBLIC_THIRDWEB_CLIENT_ID` with your client ID value
 
 ## Learn More
 
