@@ -16,7 +16,7 @@ export function NavBar() {
         <div className="mb-4 sm:mb-6">
             <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-4 bg-white/90 backdrop-blur-md rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-lg border border-white/20 min-w-0">
                 <h1 className="text-xl sm:text-2xl lg:text-3xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent tracking-tight text-center lg:text-left truncate max-w-full lg:max-w-none">
-                    Trenches Prediction Market
+                    Spectra Prediction Market
                 </h1>
                 <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full lg:w-auto flex-wrap min-w-0">
                     {/* Search Bar */}
